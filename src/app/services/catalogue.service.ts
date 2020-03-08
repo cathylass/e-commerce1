@@ -15,9 +15,9 @@ export class CatalogueService {
     return this.httpClient.get(this.host+"/products?page="+page+"&size="+size);
   }
 
-  public getProductByKeyword(mc:string,page:number,size:number){
-      return this.httpClient.get(this.host+"/products/search/byDesignationPage?mc="+mc+"&page="+page+"&size="+size);
-    }
-  }
+   public getProductByKeyword(mc:string,page:number,size:number){
+       return this.httpClient.get(this.host+"/products/search/byDesignationPage?mc="+mc+"&page="+page+"&size="+size);
+     }
+   }
 
 

@@ -20,13 +20,16 @@
         <tr *ngFor="let p of product._embedded.products">
           <td>{{p.id}}</td>
           <td>{{p.designation}}</td>
-          <td>{{p.price|number:'5.00'}}</td>
+          <td>{{p.price|number:"0.2"}}</td>
           <td>{{p.quantity}}</td>
+          <p>
+            <a class= "btn btn-danger"(click)= "onDeleteProduct(p)">Delete</a>
+          </p>
         </tr>
       </table>
-      <ul *ngIf="page" class="nav nav-pills">
-        <li class="clickable" [ng Class]="i ==currentPage?'active':''"*ngFor="let p of page; let i=index">
-          <a (click)="onPageProducts(i)">{{i}}</a>
+      <ul *ngIf="pages" class="nav nav-pills">
+        <li class="clickable"[ngClass]="i==currentPage?'active':''" *ngFor="let p of pages; let i=index">
+          <a (click)="onPageProduct(i)">{{i}}</a>
         </li>
       </ul>
     </div>
